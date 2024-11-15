@@ -1,5 +1,10 @@
 import { useEffect } from "react";
-import { ArrowRight, CheckCircle, Clock, Users, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Portfolio from "@/components/sections/Portfolio";
+import Benefits from "@/components/sections/Benefits";
+import Comparison from "@/components/sections/Comparison";
+import Reviews from "@/components/sections/Reviews";
+import About from "@/components/sections/About";
 
 const Index = () => {
   useEffect(() => {
@@ -49,37 +54,16 @@ const Index = () => {
     },
   ];
 
-  const portfolio = [
-    {
-      name: "Columbus Energy",
-      url: "https://columbusenergy.pl/dla-domu/fotowoltaika/",
-      image: "/columbus.png",
-    },
-    {
-      name: "Dobra Energia",
-      url: "https://dobraenergia.tech",
-      image: "/dobra-energia.png",
-    },
-    {
-      name: "E.ON",
-      url: "https://eon.pl/dla-domu",
-      image: "/eon.png",
-    },
-  ];
-
   const process = [
     {
-      icon: <Users className="w-6 h-6" />,
       title: "Konsultacja i analiza potrzeb",
       description: "Bezpłatna rozmowa o Twoich celach i wymaganiach",
     },
     {
-      icon: <CheckCircle className="w-6 h-6" />,
       title: "Oferta i płatność",
       description: "Przedstawienie propozycji i szybka płatność online",
     },
     {
-      icon: <Zap className="w-6 h-6" />,
       title: "Realizacja w 48h",
       description: "Błyskawiczne wdrożenie Twojej nowej strony",
     },
@@ -151,87 +135,11 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section className="section-padding bg-muted">
-        <div className="container mx-auto container-padding">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-on-scroll">
-            Nasze realizacje
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {portfolio.map((item) => (
-              <a
-                key={item.name}
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block animate-on-scroll"
-              >
-                <div className="glass-card rounded-xl overflow-hidden transition-transform hover:scale-105">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-48 object-cover"
-                    loading="lazy"
-                  />
-                  <div className="p-4">
-                    <h3 className="font-semibold text-lg">{item.name}</h3>
-                  </div>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="section-padding bg-white">
-        <div className="container mx-auto container-padding">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-on-scroll">
-            Jak wygląda współpraca?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {process.map((step, index) => (
-              <div
-                key={step.title}
-                className="glass-card rounded-xl p-6 text-center animate-on-scroll"
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
-                  {step.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                <p className="text-gray-600">{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="section-padding bg-muted">
-        <div className="container mx-auto container-padding">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 animate-on-scroll">
-            Dlaczego warto?
-          </h2>
-          <div className="max-w-3xl mx-auto space-y-6">
-            <div className="glass-card rounded-xl p-6 animate-on-scroll">
-              <h3 className="text-xl font-semibold mb-2">
-                Strony tworzone przez marketingowca
-              </h3>
-              <p className="text-gray-600">
-                Treści i układ elementów są zaprojektowane z myślą o generowaniu jak największej ilości zapytań
-              </p>
-            </div>
-            <div className="glass-card rounded-xl p-6 animate-on-scroll">
-              <h3 className="text-xl font-semibold mb-2">
-                Unikalne projekty
-              </h3>
-              <p className="text-gray-600">
-                Każda strona jest nieszablonowa i tworzona od zera, dostosowana do Twoich potrzeb
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Portfolio />
+      <Benefits />
+      <Comparison />
+      <Reviews />
+      <About />
 
       {/* CTA Section */}
       <section className="section-padding bg-primary text-white">
