@@ -33,25 +33,9 @@ const Reviews = () => {
             Co mówią klienci?
           </h2>
           
-          <div className="grid md:grid-cols-4 gap-8">
-            {/* Overall Rating Card */}
-            <div className="glass-card rounded-xl p-8 text-center">
-              <div className="flex justify-center items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-6 h-6 ${
-                      i < Math.floor(rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
-                    }`}
-                  />
-                ))}
-              </div>
-              <div className="text-3xl font-bold mb-2">{rating}/5.0</div>
-              <p className="text-gray-600">Na podstawie {reviewCount} opinii</p>
-            </div>
-
+          <div className="space-y-8">
             {/* Testimonials */}
-            <div className="md:col-span-3 grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-3 gap-6">
               {testimonials.map((testimonial, index) => (
                 <div key={index} className="glass-card rounded-xl p-6">
                   <div className="flex gap-1 mb-4">
@@ -69,6 +53,22 @@ const Reviews = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Overall Rating Card */}
+            <div className="glass-card rounded-xl p-8 max-w-sm mx-auto text-center">
+              <div className="flex justify-center items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className={`w-6 h-6 ${
+                      i < Math.floor(rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
+                    }`}
+                  />
+                ))}
+              </div>
+              <div className="text-3xl font-bold mb-2">{rating}/5.0</div>
+              <p className="text-gray-600">Na podstawie {reviewCount} opinii</p>
             </div>
           </div>
         </div>
