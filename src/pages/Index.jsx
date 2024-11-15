@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import Portfolio from "@/components/sections/Portfolio";
 import Benefits from "@/components/sections/Benefits";
 import Comparison from "@/components/sections/Comparison";
