@@ -55,20 +55,9 @@ const Reviews = () => {
               ))}
             </div>
 
-            {/* Overall Rating Card */}
-            <div className="glass-card rounded-xl p-8 max-w-sm mx-auto text-center">
-              <div className="flex justify-center items-center gap-1 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-6 h-6 ${
-                      i < Math.floor(rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
-                    }`}
-                  />
-                ))}
-              </div>
-              <div className="text-3xl font-bold mb-2">{rating}/5.0</div>
-              <p className="text-gray-600">Na podstawie {reviewCount} opinii</p>
+            {/* Overall Rating Text */}
+            <div className="text-center text-gray-600">
+              <span className="font-semibold">{rating}/5.0</span> na podstawie {reviewCount} opinii
             </div>
           </div>
         </div>
